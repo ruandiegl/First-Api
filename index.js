@@ -6,6 +6,7 @@ const bodyParser = require('./helper/bodyparser')
 const routes = require('./routes');
 const { stat } = require('fs');
 
+//Criar servidor, e pegar o metodo
 const server = http.createServer(function (request, response){
     const parsedUrl = new URL(`http://localhost:3000${request.url}`)
     
@@ -14,7 +15,7 @@ const server = http.createServer(function (request, response){
 
     let {pathname} = parsedUrl;
     let id = null
-
+//pegar os paramentros da url
     const splitendpoint = pathname.split('/').filter((Boolean)) ;
   
     if(splitendpoint.length > 1) {
